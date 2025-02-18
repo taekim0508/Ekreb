@@ -16,6 +16,7 @@ let word = ""; // Stores the original word
 
 // Function to update score display
 const updateScore = () => {
+    wrongGuesses = 0;
     scoreDisplay.textContent = `Score: ${score}`;
 };
 
@@ -153,6 +154,14 @@ continueGame.addEventListener("click", (e) => {
     button2.disabled = false;
     updateScore();
 });
+
+function startGame() {
+    window.location.href = "index.html";
+};
+
+function loading() {
+    alert("Alright! Take your time.");
+}
 
 // Initialize score display
 updateScore();

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ekreb</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    
+</head>
+<body>
+    <header>
+        <h1>Ekreb</h1>
+    </header>
+
+    <div id="gameIntro">
+        <p id="introduction">Ekreb is a word scrambling game that tests the user on their ability to guess a word from its scrambled.
+            Users will be prompted to enter a number between 2-15, which reflects the length of the scrambled word.
+            The longer the word length, the more difficult it will be to unscramble the word. 
+            Your score will reflect how many you get correct, but will return to 0 once the user incorrectly guesses a word 3 times in a row.
+        </p>
+
+        <div class="btn-group">
+            <input type="radio" id="yes" name="confirmation" value="yes" onclick="startGame()">
+            <label for="yes">Yes</label>
+        
+            <input type="radio" id="no" name="confirmation" value="no" onclick="loading()">
+            <label for="no">No</label>
+        </div>
+    </div>
+</body>
+<script src="/backend/script.js"></script>
+</html>

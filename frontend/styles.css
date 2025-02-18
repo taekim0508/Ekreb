@@ -1,3 +1,55 @@
+* {
+    font-family: 'Press Start 2P', cursive;
+}
+
+#gameIntro {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    word-spacing: 7px;
+    line-height: 2;
+}
+
+#introduction {
+    font-size: 14px;
+    text-align: center;
+    width: 650px;
+    padding: 10px;
+    justify-content: center;
+}
+
+.btn-group {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Creates two equal columns */
+    gap: 10px; /* Adds spacing between buttons */
+    justify-content: center; /* Centers content horizontally */
+    text-align: center; /* Centers text inside labels */
+    width: max-content; /* Prevents the grid from stretching */
+    margin: auto; /* Centers the whole button group */
+}
+
+.btn-group input {
+    display: none; /* Hides radio buttons */
+}
+
+.btn-group label {
+    display: block;
+    padding: 10px 20px;
+    border: 2px solid #007bff;
+    background-color: white;
+    color: #007bff;
+    cursor: pointer;
+    border-radius: 5px;
+    text-align: center;
+    width: 100px; /* Sets button width */
+}
+
+.btn-group input:checked + label {
+    background-color: #007bff;
+    color: white;
+}
+
 #input {
     display: flex;
     gap: 10px;
