@@ -3,7 +3,7 @@ Ekreb is a word-scrambling game that tests a player's ability to guess a word fr
 
 Here is a link to the game: https://taekim0508.github.io/ekreb/
 
-### design 
+## design 
 **Languages Used**: JavaScript, CSS, HTML 
 
 This project consists of 4 files: _index.html, loading.html, styles.css, script.js._
