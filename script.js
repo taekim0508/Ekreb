@@ -47,6 +47,8 @@ const restartGame = () => {
     continueGame.disabled = false;
     usersGuess.disabled = false;
     check.disabled = false;
+    retrieveWord.disabled = false;
+    hasPlayed = false;
     updateScore();
 };
 
