@@ -7,42 +7,31 @@
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
     
-
-     
 </head>
 <body>
     <header>
         <h1>Ekreb</h1>
     </header>
-    
-    <div class="layout">
-        <p id="instructions">Please enter desired length:</p>
 
-        <div class="input">
-            <input type="number" id="lengthOfWord">
-            <button type="submit" id="retrieveWord">Retrieve</button>
-        </div>
+    <div id="gameIntro">
+        <p id="introduction"> Ekreb is a word-scrambling game that tests a player's ability to guess a word from its scrambled form. 
+            Players will be prompted to enter a number between 2 and 15, which determines the length of the scrambled word. 
+            The longer the word, the more challenging it will be to unscramble. The score reflects the number of correct guesses, 
+            but it resets to zero if the player makes three consecutive incorrect guesses.
+        </p>
+
         
-        <div id="scrambledOutput">
-            <p id="preOutput">Your Scrambled Word:</p>
-            <p id="output"></p>
-        </div>
+            <label id="question">Would you like to play?</label>
 
-        <p class="instructions">Please enter unscrambled word:</p>
-        <div class="input">
-            <input type="text" id="usersGuess">
-            <button type="submit" id="check">Check</button>
-        </div>
+            <div class="btn-group">
 
-        <p id="correct"></p>
-        <p id="solution"></p>
-
-        <div id="postGame">
-
-            <p id="scoreDisplay"></p>
-            <button id="restart">Restart Game</button>
-            <button id="continue">Continue</button>
-        </div>
+                <input type="radio" id="yes" name="confirmation" value="yes" onclick="startGame()">
+                <label for="yes">Yes</label>
+            
+                <input type="radio" id="no" name="confirmation" value="no" onclick="loading()">
+                <label for="no">No</label>
+            </div>
+        
     </div>
 </body>
 <script src="script.js"></script>
