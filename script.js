@@ -167,7 +167,7 @@ continueGame.addEventListener("click", (e) => {
 });
 
 function startGame() {
-    window.location.href = "index.html";
+    window.location.href = "loading.html";
 };
 
 function loading() {
