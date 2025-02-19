@@ -162,6 +162,7 @@ continueGame.addEventListener("click", (e) => {
     usersGuess.disabled = false;
     check.disabled = false;
     hasPlayed = false;
+    retrieveWord.disabled = false;
     updateScore();
 });
 
