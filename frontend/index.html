@@ -15,30 +15,32 @@
         <h1>Ekreb</h1>
     </header>
     
-    <p id="instructions">Please enter desired length:</p>
+    <div class="layout">
+        <p id="instructions">Please enter desired length:</p>
 
-    <div id="input">
-        <input type="number" id="length">
-        <button type="submit" id="submitLen">Retrieve</button>
+        <div class="input">
+            <input type="number" id="lengthOfWord">
+            <button type="submit" id="retrieveWord">Retrieve</button>
+        </div>
+        
+        <div id="scrambledOutput">
+            <p id="preOutput">Your Scrambled Word:</p>
+            <p id="output"></p>
+        </div>
+
+        <p class="instructions">Please enter unscrambled word:</p>
+        <div class="input">
+            <input type="text" id="usersGuess">
+            <button type="submit" id="check">Check</button>
+        </div>
+
+        <p id="correct"></p>
+        <p id="solution"></p>
+
+        <p id="scoreDisplay"></p>
+        <button id="restart">Restart Game</button>
+        <button id="continue">Continue</button>
     </div>
-    
-    
-    <p id="preOutput">Your Scrambled Word:</p>
-    <p id="output"></p>
-
-    <p id="instructions">Please enter unscrambled word:</p>
-
-    <div id="userGuess">
-        <input type="text" id="guess">
-        <button type="submit" id="check">Check</button>
-    </div>
-
-    <p id="correct"></p>
-    <p id="solution"></p>
-
-    <p id="scoreDisplay"></p>
-    <button id="restart">Restart Game</button>
-    <button id="continue">Continue</button>
 </body>
 <script src="/backend/script.js"></script>
 </html>

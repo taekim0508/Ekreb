@@ -1,5 +1,7 @@
 * {
     font-family: 'Press Start 2P', cursive;
+    background-color: black;
+    color: white;
 }
 
 #gameIntro {
@@ -45,9 +47,21 @@
     width: 100px; /* Sets button width */
 }
 
+.btn-group label:hover{
+    background-color: #007bff;
+    color: white;
+}
+
 .btn-group input:checked + label {
     background-color: #007bff;
     color: white;
+}
+
+.layout {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 #input {
@@ -55,100 +69,70 @@
     gap: 10px;
     align-items: center; 
     justify-content: center; /*centers vertically */
-
-}
-
-#length {
-    padding: 10px;
-    width: 300px;
-    font-family: 'Press Start 2P', cursive;
-    font-size: 16px;
-    text-align: center;
-    border: 1px solid rgb(150, 150, 150);
-    border-radius: 15px;
-    outline: none;
-}
-
-#submitLen{
-    padding: 10px 15px;
-    font-family: 'Press Start 2P', cursive;
-    font-size: 16px;
-    border: none;
-    background-color: white;
-    color: black;
-    cursor: pointer;
-    border-radius: 10px;
-    border: 1px solid rgb(150, 150, 150);
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); /* Adds a subtle shadow for depth */
 }
 
 #instructions {
-    align-items: center; 
-    justify-content: center; /*centers vertically */
-    font-family: 'Press Start 2P', cursive;
-    text-align: center;
-    font-size: 12px;
-    font-weight: 50%;
-    margin-top: 10px;   
-}
-
-#preOutput {
-    align-items: center; 
-    justify-content: center; /*centers vertically */
-    font-family: 'Press Start 2P', cursive;
-    text-align: center;
-    font-size: 12px;
-    font-weight: 50%;
-    margin-top: 20px;   
-}
-
-#output {
-    align-items: center; 
-    justify-content: center; /*centers vertically */
-    font-family: 'Press Start 2P', cursive;
-    text-align: center;
     font-size: 16px;
-    font-weight: 50%;
-    margin-top: 20px;
-    text-decoration: underline;
-    margin-bottom: 100px;
 }
 
-#guess{
-    padding: 10px;
-    width: 300px;
-    font-family: 'Press Start 2P', cursive;
+#lengthOfWord {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 16px;
+    width: 100px;
     font-size: 16px;
     text-align: center;
-    border: 1px solid rgb(150, 150, 150);
-    border-radius: 15px;
+    border: 2px solid rgb(150, 150, 150);
     outline: none;
 }
 
-#check{
-    padding: 10px 15px;
-    font-family: 'Press Start 2P', cursive;
-    font-size: 16px;
-    border: none;
+button {
+    padding: 10px 20px;
+    border: 2px solid #007bff;
     background-color: white;
-    color: black;
+    color: #007bff;
     cursor: pointer;
-    border-radius: 10px;
-    border: 1px solid rgb(150, 150, 150);
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); /* Adds a subtle shadow for depth */
+    border-radius: 5px;
+    text-align: center;
 }
 
-#userGuess {
-    display: flex;
-    gap: 10px;
-    align-items: center; 
-    justify-content: center; /*centers vertically */
+button:hover{
+    background-color: #007bff;
+    color: white;
 }
+
+/* add glowing border */ 
+#scrambledOutput {
+    display: inline-block;
+    margin-top: 30px;
+    width: max-content;
+    margin-bottom: 20px;
+}
+
+#preOutput {
+    display: inline-block;
+}
+
+#output {
+    display: inline-block;
+    font-size: 16px;
+    font-weight: 50%;
+    text-decoration: underline;
+}
+
+#usersGuess{
+    padding: 10px;
+    width: 300px;
+    font-size: 16px;
+    text-align: center;
+    border: 2px solid rgb(150, 150, 150);
+    outline: none;
+}
+
 
 #correct {
     align-items: center; 
     justify-content: center; /*centers vertically */
-    font-family: 'Press Start 2P', cursive;
     text-align: center;
     font-size: 12px;
     font-weight: 50%;
@@ -158,7 +142,6 @@
 #scoreDisplay {
     align-items: center; 
     justify-content: center; /*centers vertically */
-    font-family: 'Press Start 2P', cursive;
     text-align: center;
     font-size: 12px;
     font-weight: 50%;

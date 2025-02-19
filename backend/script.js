@@ -1,9 +1,9 @@
 // Selecting elements from the DOM
-const button1 = document.getElementById("submitLen"),
-      input1 = document.getElementById("length"),
+const retrieveWord = document.getElementById("retrieveWord"),
+      userLength = document.getElementById("lengthOfWord"),
       output = document.getElementById("output"),
-      button2 = document.getElementById("check"),
-      input2 = document.getElementById("guess"),
+      check = document.getElementById("check"),
+      usersGuess = document.getElementById("usersGuess"),
       rightOrWrong = document.getElementById("correct"),
       solution = document.getElementById("solution"),
       scoreDisplay = document.getElementById("scoreDisplay"),
@@ -25,8 +25,8 @@ const gameOver = () => {
     rightOrWrong.textContent = "❌ Game Over!";
     rightOrWrong.style.color = "red";
     solution.textContent = `Solution: ${word}`; // Show the correct word
-    input1.disabled = true;
-    input2.disabled = true; // Disable input
+    userLength.disabled = true;
+    usersGuess.disabled = true; // Disable input
     button2.disabled = true; // Disable check button
     continueGame.disabled = true;
 };
@@ -36,21 +36,21 @@ const restartGame = () => {
     score = 0;
     wrongGuesses = 0;
     word = "";
-    input1.value="";
-    input2.value = "";
+    userLength.value="";
+    usersGuess.value = "";
     output.textContent = "";
     rightOrWrong.textContent = "";
     solution.textContent = "";
-    input1.disabled = false;
+    userLength.disabled = false;
     continueGame.disabled = false;
-    input2.disabled = false;
+    usersGuess.disabled = false;
     button2.disabled = false;
     updateScore();
 };
 
 // Function to retrieve and scramble a word
 const handleSubmit = async () => {
-    const length = input1.value.trim(); 
+    const length = userLength.value.trim(); 
 
     if (!length || isNaN(length) || length < 2 || length > 15) {
         output.textContent = "❌ Enter a number between 2 and 15.";
@@ -67,7 +67,7 @@ const handleSubmit = async () => {
 
         let scrambled = scramble(word);
         output.textContent = scrambled;
-        output.style.color = "black"; 
+        output.style.color = "white"; 
     } catch (error) {
         console.error("Error fetching data:", error);
         output.textContent = "❌ Error fetching word.";
@@ -87,7 +87,7 @@ const scramble = (word) => {
 
 // Check if the guessed word is correct
 const checkGuess = () => {
-    let userGuess = input2.value.trim().toLowerCase();
+    let userGuess = usersGuess.value.trim().toLowerCase();
 
     if (!word) {
         rightOrWrong.textContent = "❌ No word generated yet!";
@@ -112,24 +112,24 @@ const checkGuess = () => {
 };
 
 // Event Listeners
-button1.addEventListener("click", (e) => {
+retrieveWord.addEventListener("click", (e) => {
     e.preventDefault();
     handleSubmit();
 });
 
-input1.addEventListener("keydown", (e) => {
+userLength.addEventListener("keydown", (e) => {
     if (e.key === "Enter") {
         e.preventDefault();
         handleSubmit();
     }
 });
 
-button2.addEventListener("click", (e) => {
+check.addEventListener("click", (e) => {
     e.preventDefault();
     checkGuess();
 });
 
-input2.addEventListener("keydown", (e) => {
+usersGuess.addEventListener("keydown", (e) => {
     if (e.key === "Enter") {
         e.preventDefault();
         checkGuess();
@@ -145,12 +145,12 @@ restartButton.addEventListener("click", (e) => {
 continueGame.addEventListener("click", (e) => {
     e.preventDefault();
     word = "";
-    input1.value="";
-    input2.value = "";
+    userLength.value="";
+    usersGuess.value = "";
     output.textContent = "";
     rightOrWrong.textContent = "";
     solution.textContent = "";
-    input2.disabled = false;
+    usersGuess.disabled = false;
     button2.disabled = false;
     updateScore();
 });
