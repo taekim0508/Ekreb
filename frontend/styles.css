@@ -104,21 +104,55 @@ button:hover{
 /* add glowing border */ 
 #scrambledOutput {
     display: inline-block;
-    margin-top: 30px;
-    width: max-content;
-    margin-bottom: 20px;
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    padding: 15px;
+    border-radius: 5px;
+    background-color: black; 
+    box-shadow: inset 0 0 25px 5px rgba(0, 0, 255, 0.7); /* Blue glow effect */
+    /* 
+    horizontal offset +/- 
+    vertical offset +/- 
+    blur-radius (how much the shadow is blurred)
+    spread-radius (size of shadow)
+    */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#scrambledOutput:hover {
+    transform: scale(1.01);
+    box-shadow: inset 0 0 25px 5px rgba(255, 255, 255, 0.5); /* White glow */
 }
 
 #preOutput {
     display: inline-block;
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff; /* White text */
+    margin-bottom: 5px;
 }
 
 #output {
     display: inline-block;
-    font-size: 16px;
-    font-weight: 50%;
+    font-size: 24px;
+    font-weight: bold;
+    color: #1e90ff; /* Dodger blue color */
+    border: 0;
     text-decoration: underline;
+    letter-spacing: 2px;
+    animation: glow 1.5s infinite alternate;
 }
+
+@keyframes glow {
+    from {
+        text-shadow: 0 0 5px #1e90ff;
+    }
+    to {
+        text-shadow: 0 0 20px #1e90ff, 0 0 30px #1e90ff;
+    }
+}
+
 
 #usersGuess{
     padding: 10px;
@@ -136,15 +170,17 @@ button:hover{
     text-align: center;
     font-size: 12px;
     font-weight: 50%;
-    margin-top: 20px;   
+    margin-top: 10px;
 }
 
+
+#restart, #continue{
+    display: inline-block;
+}
+
+
 #scoreDisplay {
-    align-items: center; 
-    justify-content: center; /*centers vertically */
-    text-align: center;
-    font-size: 12px;
-    font-weight: 50%;
-    margin-top: 20px;   
+    justify-self: center;
+    margin-top: 10px;
 }
 

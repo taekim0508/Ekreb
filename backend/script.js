@@ -13,6 +13,7 @@ const retrieveWord = document.getElementById("retrieveWord"),
 let score = 0; // Initialize score
 let wrongGuesses = 0; // Track wrong guesses
 let word = ""; // Stores the original word
+let hasPlayed = false;
 
 // Function to update score display
 const updateScore = () => {
@@ -27,8 +28,9 @@ const gameOver = () => {
     solution.textContent = `Solution: ${word}`; // Show the correct word
     userLength.disabled = true;
     usersGuess.disabled = true; // Disable input
-    button2.disabled = true; // Disable check button
+    check.disabled = true; // Disable check button
     continueGame.disabled = true;
+    retrieveWord.disabled = true;
 };
 
 // Function to restart the game
@@ -44,7 +46,7 @@ const restartGame = () => {
     userLength.disabled = false;
     continueGame.disabled = false;
     usersGuess.disabled = false;
-    button2.disabled = false;
+    check.disabled = false;
     updateScore();
 };
 
@@ -87,6 +89,8 @@ const scramble = (word) => {
 
 // Check if the guessed word is correct
 const checkGuess = () => {
+    if (hasPlayed) return; 
+
     let userGuess = usersGuess.value.trim().toLowerCase();
 
     if (!word) {
@@ -99,11 +103,16 @@ const checkGuess = () => {
         rightOrWrong.textContent = "✅ That's Correct!";
         rightOrWrong.style.color = "green";
         score++; 
+        check.disabled = true;
+        retrieveWord.disabled = true;
+        hasPlayed = true;
         updateScore();
     } else {
         rightOrWrong.textContent = "❌ That's Incorrect!";
         rightOrWrong.style.color = "red";
         wrongGuesses++;
+        retrieveWord.disabled = true;
+
 
         if (wrongGuesses >= 3) {
             gameOver(); // Stop the game
@@ -151,7 +160,8 @@ continueGame.addEventListener("click", (e) => {
     rightOrWrong.textContent = "";
     solution.textContent = "";
     usersGuess.disabled = false;
-    button2.disabled = false;
+    check.disabled = false;
+    hasPlayed = false;
     updateScore();
 });
 
